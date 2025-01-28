@@ -1,0 +1,23 @@
+service: localstack-lambda
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  endpoint: http://localhost:4566
+  region: us-east-1
+
+plugins:
+  - serverless-localstack
+
+custom:
+  localstack:
+    stages:
+      - local
+
+functions:
+  s3SqsHandler:
+    handler: handler.handler
+    events:
+      - http:
+          path: s3-sqs
+          method: post
