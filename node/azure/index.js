@@ -11,6 +11,8 @@ app.http('my-test-api', {
             // In Azure Functions, typically it's in process.env.AzureWebJobsStorage by default.
             const connectionString = process.env.AzureWebJobsStorage;
 
+            console.log(connectionString, 'connectionString')
+
             // 1. Create a new container in Blob Storage (equivalent to an S3 bucket)
             const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
             const containerName = 'test-container';
