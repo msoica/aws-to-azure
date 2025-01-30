@@ -136,6 +136,7 @@ pip install boto3
 
 ```
 
+Rename local.settings.json_ to local.settings.json
 
 ### Install dep for python in azure
 ```
